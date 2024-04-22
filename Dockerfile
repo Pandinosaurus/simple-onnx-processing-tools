@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
 RUN pip install -U onnx \
     && pip install -U onnx-simplifier \
     && python3 -m pip install -U onnx_graphsurgeon --index-url https://pypi.ngc.nvidia.com \
+    && pip install -U simple_onnx_processing_tools \
     && pip install -U simple_onnx_processing_tools
 
 ENV USERNAME=user
